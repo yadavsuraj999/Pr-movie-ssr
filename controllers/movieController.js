@@ -1,6 +1,10 @@
 const router = require("../routes/indexRoutes");
 
-const viewMovie = (req, res)=>{
+const dashboard = (req, res) => {
     return res.render("index")
 };
-module.exports = {viewMovie}
+
+const addMovie = (req, res) => {
+    return res.render("addmovie")
+}
+module.exports = { dashboard, addMovie }

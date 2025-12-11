@@ -4,6 +4,33 @@
   <script src="/assets/plugins/feather.min.js"></script>
   <!-- Custom scripts -->
   <script src="/assets/js/script.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // File input display
+    document.getElementById('fileInput').addEventListener('change', function(e) {
+      const fileName = e.target.files[0]?.name;
+      const fileNameDiv = document.getElementById('fileName');
+      const fileText = document.getElementById('fileText');
+      
+      if (fileName) {
+        fileNameDiv.textContent = '✓ ' + fileName;
+        fileText.textContent = 'Change file';
+      } else {
+        fileNameDiv.textContent = '';
+        fileText.textContent = 'Click to browse or drag and drop';
+      }
+    });
+
+    // Form submission
+    document.getElementById('movieForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Movie added successfully!');
+      this.reset();
+      document.getElementById('fileName').textContent = '';
+      document.getElementById('fileText').textContent = 'Click to browse or drag and drop';
+    });
+  // </script>
 </body>
 
 </html>

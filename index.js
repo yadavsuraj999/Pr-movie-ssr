@@ -10,6 +10,7 @@ const PORT = 6600;
 
 app.use("/", viewRoute);
 
+
 app.listen(PORT, () => {
     console.log(`server is running on http://localhost:${PORT}`);
 })
