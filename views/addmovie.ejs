@@ -1,105 +1,81 @@
 <%- include("partials/start") %>
-
     <div class="layer"></div>
-    <!-- ! Body -->
     <a class="skip-link sr-only" href="#skip-target">Skip to content</a>
     <div class="page-flex">
         <%- include("partials/aside.ejs") %>
             <div class="main-wrapper">
-                <!-- ! Main nav -->
-                <!-- <%- include("partials/nav.ejs") %> -->
-                    <!-- ! Main -->
-                    <main class="main users chart-page suraj" id="skip-target">
-                        <div class="container">
-                            <div class="form-header">
-                                <h3><i class="fas fa-film"></i> Add New Movie</h3>
-                                <p>Fill in the details below to add a new movie to the database</p>
-                            </div>
-
-                            <form id="movieForm">
-
-                                <!-- Movie name -->
-                                <div class="mb-3">
-                                    <label class="form-label">
-                                        <i class="fas fa-video"></i> Movie Name
-                                    </label>
-                                    <input type="text" class="form-control" placeholder="Enter movie name" required>
-                                </div>
-
-                                <!-- Genre -->
-                                <div class="mb-3">
-                                    <label class="form-label">
-                                        <i class="fas fa-theater-masks"></i> Genre
-                                    </label>
-                                    <select class="form-select" required>
-                                        <option value="">Select genre</option>
-                                        <option>Action</option>
-                                        <option>Drama</option>
-                                        <option>Comedy</option>
-                                        <option>Romance</option>
-                                        <option>Horror</option>
-                                        <option>Sci-Fi</option>
-                                        <option>Thriller</option>
-                                        <option>Documentary</option>
-                                    </select>
-                                </div>
-
-                                <!-- Date -->
-                                <div class="mb-3">
-                                    <label class="form-label">
-                                        <i class="fas fa-calendar-alt"></i> Release Date
-                                    </label>
-                                    <input type="date" class="form-control" required>
-                                </div>
-
-                                <!-- Image upload -->
-                                <div class="mb-3">
-                                    <label class="form-label">
-                                        <i class="fas fa-image"></i> Upload Movie Poster
-                                    </label>
-                                    <div class="file-input-wrapper">
-                                        <label for="fileInput" class="file-input-label">
-                                            <i class="fas fa-cloud-upload-alt"></i>
-                                            <span id="fileText">Click to browse or drag and drop</span>
-                                        </label>
-                                        <input type="file" id="fileInput" class="form-control" accept="image/*"
-                                            required>
-                                        <div id="fileName" class="file-name"></div>
-                                    </div>
-                                </div>
-
-                                <!-- Description -->
-                                <div class="mb-3">
-                                    <label class="form-label">
-                                        <i class="fas fa-align-left"></i> Description
-                                    </label>
-                                    <textarea class="form-control" rows="4"
-                                        placeholder="Write a brief description of the movie..." required></textarea>
-                                </div>
-
-                                <!-- Rating -->
-                                <div class="mb-3">
-                                    <label class="form-label">
-                                        <i class="fas fa-star"></i> Rating (1-10)
-                                    </label>
-                                    <input type="number" class="form-control rating-input" min="1" max="10" step="0.1"
-                                        placeholder="8.5" required>
-                                </div>
-
-                                <!-- Submit & Reset Buttons -->
-                                <div class="d-flex gap-3 mt-5">
-                                    <button type="submit" class="btn btn-submit flex-grow-1">
-                                        <i class="fas fa-check-circle me-2"></i>Submit Movie
-                                    </button>
-                                    <button type="reset" class="btn btn-reset">
-                                        <i class="fas fa-redo me-2"></i>Reset
-                                    </button>
-                                </div>
-
-                            </form>
+                <main class="main users my-5 chart-page suraj" id="skip-target">
+                    <div class="container ">
+                        <div class="form-header ">
+                            <h3><i class="fas fa-film"></i> Add New Movie</h3>
+                            <p>Fill in the details below to add a new movie to the database</p>
                         </div>
 
-                    </main>
+                        <form id="movieForm" action="/add-movie" method="post" enctype="multipart/form-data">
+                            <div class="mb-2">
+                                <label class="form-label">
+                                    <i class="fas fa-video"></i> Movie Name
+                                </label>
+                                <input type="text" name="name" class="form-control" placeholder="Enter movie name">
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label">
+                                    <i class="fas fa-theater-masks"></i> Genre
+                                </label>
+                                <select class="form-select" name="genre">
+                                    <option value="">Select genre</option>
+                                    <option value="Action">Action</option>
+                                    <option value="Drama">Drama</option>
+                                    <option value="Comedy">Comedy</option>
+                                    <option value="Romance">Romance</option>
+                                    <option value="Horror">Horror</option>
+                                    <option value="Sci">Sci-Fi</option>
+                                    <option value="Thriller">Thriller</option>
+                                    <option value="Documentary">Documentary</option>
+                                </select>
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label">
+                                    Release Date
+                                </label>
+                                <input type="date" name="date" class="form-control">
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label">
+                                    <i class="fas fa-image"></i> Upload Movie Poster
+                                </label>
+                                <div class="file-input-wrapper">
+                                    <label for="fileInput" class="file-input-label">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <span id="fileText">Click to browse or drag and drop</span>
+                                    </label>
+                                    <input type="file" name="photo" id="fileInput" class="form-control" accept="image/*">
+                                </div>
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label">
+                                    <i class="fas fa-align-left"></i> Description
+                                </label>
+                                <textarea name="description" class="form-control" rows="4"
+                                    placeholder="Write a brief description of the movie..."></textarea>
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label">
+                                    <i class="fas fa-star"></i> Rating (1-10)
+                                </label>
+                                <input type="number" name="rating" class="form-control rating-input" min="1" max="10"
+                                    step="0.1" placeholder="8.5">
+                            </div>
+                            <div class="d-flex gap-3 mt-3">
+                                <button class="btn btn-submit flex-grow-1" type="submit">
+                                    <i class="fas fa-check-circle me-2"></i>Submit Movie
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </main>
             </div>
     </div>
 

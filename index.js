@@ -1,12 +1,14 @@
 const express = require("express");
 const  viewRoute = require("./routes/indexRoutes");
+const connectDB = require("./config/db");
 const app = express();
 app.set("view engine", "ejs")
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
-app.use("uploads", express.static("uploads"));
+app.use("/uploads", express.static("uploads"));
 const PORT = 6600;
 
+connectDB()
 
 app.use("/", viewRoute);
 
