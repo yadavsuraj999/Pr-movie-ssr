@@ -6,10 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elegant Dashboard | Dashboard</title>
-  <!-- Favicon -->
   <link rel="shortcut icon" href="./images/svg/logo.svg" type="image/x-icon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
-  <!-- Custom styles -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/style.min.css">
 
   <style>
@@ -214,6 +213,96 @@
         font-size: 15px;
       }
     }
+
+    /* body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            min-height: 100vh;
+            padding: 40px 0;
+        } */
+
+    .movie-card {
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.movie-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.poster-container {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.poster-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.year-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 0.85rem;
+}
+
+.rating-badge {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #ffc107;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.card-title {
+  font-weight: 700;
+  color: #2d3748;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-text {
+  color: #718096;
+  font-size: 0.875rem;
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.d-flex .btn {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .movie-card {
+    height: auto;
+  }
+
+  .poster-container {
+    height: 200px;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .rating-badge {
+    font-size: 0.8rem;
+  }
+
+  .card-text {
+    font-size: 0.75rem;
+  }
+}
+
   </style>
 </head>
 

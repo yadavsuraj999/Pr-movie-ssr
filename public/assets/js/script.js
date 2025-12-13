@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var catSubMenu = showCatBtn.nextElementSibling;
         showCatBtn.addEventListener('click', function (e) {
           e.preventDefault();
-          catSubMenu.classList.toggle('visible');
+          // catSubMenu.classList.toggle('visible');
           var catBtnToRotate = document.querySelector('.category__btn');
           catBtnToRotate.classList.toggle('rotated');
         });
