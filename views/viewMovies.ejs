@@ -6,12 +6,13 @@
 
         <div class="d-flex">
             <%- include("partials/aside.ejs") %>
-                <div class="container py-5 mx-5">
-                    <h1 class="text-center fw-bold text-dark mb-5">Movie Collection</h1>
-                        <div class="row  d-flex justify-content-center g-4">
+            <div class="w-100 ">
+                <%- include("partials/nav.ejs") %>
+                    <h1 class="text-center mx-5  py-5 fw-bold text-dark mb-5">Movie Collection</h1>
+                        <div class="row px-5 d-flex justify-content-center g-4">
                             <% movies.map((movie)=> { %>
                                 <div class="col-md-4 col-12">
-                                    <div class="card movie-card shadow-lg border-0 rounded-4">
+                                    <div class="card movie-card shadow-lg border-0 rounded-4 ">
                                         <div class="poster-container">
                                             <img src="<%= movie.photo %>" class="card-img-top" alt="<%= movie.name %>">
                                             <span class="badge bg-white text-dark year-badge">
@@ -26,9 +27,9 @@
                                             <h5 class="card-title">
                                                 <%= movie.name %>
                                             </h5>
-                                            <p class="card-text">
+                                            <!-- <p class="card-text">
                                                 <%= movie.description %>
-                                            </p>
+                                            </p> -->
                                             <div class="d-flex gap-2">
                                                 <a href="/edit-movie/<%= movie._id %>"
                                                     class="btn btn-primary flex-fill">

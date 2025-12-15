@@ -9,8 +9,6 @@ router.post("/add-movie", upload.single("photo") ,viewMovie);
 router.get("/view-movie", showMovie)
 router.get("/delete-movie/:id", deleteMovie)
 router.get("/edit-movie/:id", editMovie);  
-router.post("/edit-movie/:id", upload.single("photo"), updateMovie);  
-
-
+router.post("/edit-movie/:id", upload.single("photo"), updateMovie);
 
 module.exports = router;

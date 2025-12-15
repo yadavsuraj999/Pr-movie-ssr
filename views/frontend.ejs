@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineVerse - Movie Database</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/forntend.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="fas fa-film text-primary"></i> CineVerse
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#movies">Movies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#trending">Trending</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-2 px-4"
+                            href="/">Admin</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="hero" id="home">
+        <div class="container position-relative">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-3 fw-bold mb-4">Discover Amazing Movies</h1>
+                    <p class="lead mb-4">Explore thousands of movies from every genre. Find your next favorite film
+                        today.</p>
+                    <button class="btn btn-light btn-lg px-5">
+                        <i class="fas fa-play me-2"></i> Start Watching
+                    </button>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-center">
+                        <i class="fas fa-video fa-10x opacity-75"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number">10K+</div>
+                        <div class="text-muted">Movies</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number">5M+</div>
+                        <div class="text-muted">Users</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number">50+</div>
+                        <div class="text-muted">Genres</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number">4.8</div>
+                        <div class="text-muted">Avg Rating</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" id="movies">
+        <div class="container">
+            <h2 class="section-title fw-bold">Featured Movies</h2>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="card movie-card">
+                        <div class="movie-img d-flex align-items-center justify-content-center">
+                            <img src="https://m.media-amazon.com/images/I/91avn4X5FBL._UF1000,1000_QL80_.jpg" alt="">
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title mb-0">The Quantum Paradox</h5>
+                                <span class="rating"><i class="fas fa-star"></i> 8.5</span>
+                            </div>
+                            <p class="text-muted small mb-3">2024 • 2h 15m</p>
+                            <p class="card-text">A brilliant physicist discovers a way to manipulate time and must
+                                prevent a catastrophic paradox.</p>
+                            <div class="mb-3">
+                                <span class="category-badge">Sci-Fi</span>
+                                <span class="category-badge">Thriller</span>
+                            </div>
+                            <button class="btn btn-primary w-100">
+                                <i class="fas fa-play me-2"></i> Watch Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card movie-card">
+                        <div class="movie-img d-flex align-items-center justify-content-center">
+                            <img src="https://thumbor.prod.vidiocdn.com/2TAHNJeszPufugQSENMC5aCGZwU=/filters:quality(70)/vidio-web-prod-film/uploads/film/image_portrait/390/love-in-paris-1cf58a.jpg"
+                                alt="">
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title mb-0">Love in Paris</h5>
+                                <span class="rating"><i class="fas fa-star"></i> 7.9</span>
+                            </div>
+                            <p class="text-muted small mb-3">2024 • 1h 48m</p>
+                            <p class="card-text">Two strangers meet in the City of Light and embark on an unforgettable
+                                romantic journey.</p>
+                            <div class="mb-3">
+                                <span class="category-badge">Romance</span>
+                                <span class="category-badge">Drama</span>
+                            </div>
+                            <button class="btn btn-primary w-100">
+                                <i class="fas fa-play me-2"></i> Watch Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card movie-card">
+                        <div class="movie-img d-flex align-items-center justify-content-center">
+                            <img src="https://resizing.flixster.com/Tr3FrtXVLOHfouUczj5IZq59NyM=/206x305/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p8915770_p_v8_af.jpg"
+                                alt="">
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title mb-0">Dark Shadows</h5>
+                                <span class="rating"><i class="fas fa-star"></i> 8.2</span>
+                            </div>
+                            <p class="text-muted small mb-3">2024 • 2h 05m</p>
+                            <p class="card-text">A detective investigates mysterious disappearances in a small town with
+                                a dark secret.</p>
+                            <div class="mb-3">
+                                <span class="category-badge">Horror</span>
+                                <span class="category-badge">Mystery</span>
+                            </div>
+                            <button class="btn btn-primary w-100">
+                                <i class="fas fa-play me-2"></i> Watch Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card movie-card">
+                        <div class="movie-img d-flex align-items-center justify-content-center">
+                            <img src="https://m.media-amazon.com/images/M/MV5BZDFhZmM3ZmEtMjJhOC00NWIyLTljYzUtNTA4YTIzZTBiYTZjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                                alt="">
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title mb-0">Laugh Out Loud</h5>
+                                <span class="rating"><i class="fas fa-star"></i> 7.5</span>
+                            </div>
+                            <p class="text-muted small mb-3">2024 • 1h 35m</p>
+                            <p class="card-text">A hilarious comedy about a family vacation that goes hilariously wrong
+                                in every way.</p>
+                            <div class="mb-3">
+                                <span class="category-badge">Comedy</span>
+                                <span class="category-badge">Family</span>
+                            </div>
+                            <button class="btn btn-primary w-100">
+                                <i class="fas fa-play me-2"></i> Watch Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light" id="trending">
+        <div class="container">
+            <h2 class="section-title fw-bold">Trending Now</h2>
+            <div class="row g-4">
+                <% movies.map((movie)=>{ %>
+                    <div class="col-md-4">
+                        <div class="card movie-card">
+                            <div class="movie-img d-flex align-items-center justify-content-center">
+                                <img src="<%= movie.photo %>" alt="">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title ps-2"><%= movie.name %></h5>
+                                <span class="category-badge1"><%= movie.genre %></span>
+                                <div class="d-flex justify-content-between mt-2 align-items-center">
+                                    <span class="rating"><i class="fas fa-star"></i><%= movie.rating %></span>
+                                    <a href="/frontendview" class=" btn btn-primary text-white"> View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <% }) %>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3"><i class="fas fa-film"></i> CineVerse</h5>
+                    <p>Your ultimate destination for discovering and watching the best movies from around the world.</p>
+                    <div class="mt-3">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Movies</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">TV Shows</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Genres</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h6 class="fw-bold mb-3">Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50 text-decoration-none">Help Center</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Terms of Service</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Privacy Policy</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h6 class="fw-bold mb-3">Newsletter</h6>
+                    <p class="small">Subscribe to get updates on new releases.</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Your email">
+                        <button class="btn btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <div class="text-center py-3">
+                <p class="mb-0 text-white-50">&copy; 2024 CineVerse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,5 +1,7 @@
+const path = require("path");
 const Movies = require("../models/movieSchema.js");
 const router = require("../routes/indexRoutes.js");
+const fs = require("fs");
 
 const dashboard = (req, res) => {
     return res.render("index")
@@ -39,10 +41,18 @@ const showMovie = async (req, res) => {
 
 const deleteMovie = async (req, res) => {
     try {
-
         const movieId = req.params.id;
+        const movie = await Movies.findById(movieId);
+
+        const imagePath = path.join(__dirname, "..", movie.photo)
+
+        fs.unlink(imagePath, (error) => {
+            if (error) {
+                console.log(error || "something went wrong");
+            }
+        })
         await Movies.findByIdAndDelete(movieId);
-        return res.redirect("/view-movie");
+        return res.redirect("/")
     } catch (error) {
         console.log(error);
         return res.status(500).send("An error occurred while deleting the movie");
@@ -72,6 +82,12 @@ const updateMovie = async (req, res) => {
         movie.description = req.body.description;
         movie.rating = req.body.rating;
         if (req.file) {
+            const imagePath = path.join(__dirname, "..", movie.photo)
+            fs.unlink(imagePath, (error) => {
+                if (error) {
+                    console.log(error || "something went wrong");
+                }
+            })
             movie.photo = req.file.path;
         }
         await movie.save();
@@ -82,6 +98,18 @@ const updateMovie = async (req, res) => {
 };
 
 
+const frontEnd = async (req, res) => {
+    const movies = await Movies.find();
+    console.log(movies);
+    return res.render("frontend", {movies})
+}
+
+const frontEndView = async (req, res) => {
+    const movies = await Movies.find();
+    console.log(movies);
+    return res.render("frontEndView", {movies})
+}
 
 
-module.exports = { dashboard, addMovie, viewMovie, showMovie, deleteMovie, editMovie, updateMovie }
+
+module.exports = { dashboard, addMovie, viewMovie, showMovie, deleteMovie, editMovie, updateMovie, frontEnd, frontEndView }
