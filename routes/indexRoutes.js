@@ -3,7 +3,7 @@ const { dashboard, addMovie, viewMovie, showMovie, deleteMovie, editMovie, updat
 const upload = require("../middleware/multer.js");
 const router = express.Router();
 
-router.get("/", dashboard);
+router.get("/admin", dashboard);
 router.get("/add-movie" , addMovie);
 router.post("/add-movie", upload.single("photo") ,viewMovie);
 router.get("/view-movie", showMovie)

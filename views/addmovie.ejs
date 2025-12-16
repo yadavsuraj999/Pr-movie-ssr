@@ -1,84 +1,164 @@
 <%- include("partials/start") %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.22/dist/sweetalert2.min.css">
     <div class="layer"></div>
     <a class="skip-link sr-only" href="#skip-target">Skip to content</a>
     <div class="page-flex">
         <%- include("partials/aside.ejs") %>
-        <div class="main-wrapper">
+            <div class="main-wrapper">
                 <%- include("partials/nav.ejs") %>
-                <main class="main users my-5 chart-page suraj" id="skip-target">
-                    <div class="container ">
-                        <div class="form-header ">
-                            <h3><i class="fas fa-film"></i> Add New Movie</h3>
-                            <p>Fill in the details below to add a new movie to the database</p>
-                        </div>
-
-                        <form id="movieForm" action="/add-movie" method="post" enctype="multipart/form-data">
-                            <div class="mb-2">
-                                <label class="form-label">
-                                    <i class="fas fa-video"></i> Movie Name
-                                </label>
-                                <input type="text" name="name" class="form-control" placeholder="Enter movie name">
+                    <main class="main users my-5 chart-page suraj" id="skip-target">
+                        <div class="container">
+                            <div class="form-header">
+                                <h3><i class="fas fa-film"></i> Add New Movie</h3>
+                                <p>Fill in the details below to add a new movie to the database</p>
                             </div>
-                            <div class="mb-2">
-                                <label class="form-label">
-                                    <i class="fas fa-theater-masks"></i> Genre
-                                </label>
-                                <select class="form-select" name="genre">
-                                    <option value="">Select genre</option>
-                                    <option value="Action">Action</option>  
-                                    <option value="Drama">Drama</option>
-                                    <option value="Comedy">Comedy</option>
-                                    <option value="Romance">Romance</option>
-                                    <option value="Horror">Horror</option>
-                                    <option value="Sci">Sci-Fi</option>
-                                    <option value="Thriller">Thriller</option>
-                                    <option value="Documentary">Documentary</option>
-                                </select>
-                            </div>
-                            <div class="mb-2">
-                                <label class="form-label">
-                                    Release Date
-                                </label>
-                                <input type="date" name="date" class="form-control">
-                            </div>
-                            <div class="mb-2">
-                                <label class="form-label">
-                                    <i class="fas fa-image"></i> Upload Movie Poster
-                                </label>
-                                <div class="file-input-wrapper">
-                                    <label for="fileInput" class="file-input-label">
-                                        <i class="fas fa-cloud-upload-alt"></i>
-                                        <span id="fileText">Click to browse or drag and drop</span>
+                            <form id="movieForm" action="/add-movie" method="post" enctype="multipart/form-data">
+                                <div class="mb-2">
+                                    <label class="form-label">
+                                        <i class="fas fa-video"></i> Movie Name
                                     </label>
-                                    <input type="file" name="photo" id="fileInput" class="form-control"
-                                        accept="image/*">
+                                    <input type="text" name="name" id="movieName" class="form-control"
+                                        placeholder="Enter movie name">
                                 </div>
-                            </div>
-                            <div class="mb-2">
-                                <label class="form-label">
-                                    <i class="fas fa-align-left"></i> Description
-                                </label>
-                                <textarea name="description" class="form-control" rows="4"
-                                    placeholder="Write a brief description of the movie..."></textarea>
-                            </div>
-                            <div class="mb-2">
-                                <label class="form-label">
-                                    <i class="fas fa-star"></i> Rating (1-10)
-                                </label>
-                                <input type="number" name="rating" class="form-control rating-input" min="1" max="10"
-                                    step="0.1" placeholder="8.5">
-                            </div>
-                            <div class="d-flex justify-content-center mt-3">
-                                <button class="btn btn-submit">
-                                    <i class="fas fa-check-circle me-2"></i>Submit Movie
-                                </button>
-                            </div>
+                                <div class="mb-2">
+                                    <label class="form-label">
+                                        <i class="fas fa-theater-masks"></i> Genre
+                                    </label>
+                                    <select class="form-select" name="genre" id="genreSelect">
+                                        <option value="">Select genre</option>
+                                        <option value="Action">Action</option>
+                                        <option value="Drama">Drama</option>
+                                        <option value="Comedy">Comedy</option>
+                                        <option value="Romance">Romance</option>
+                                        <option value="Horror">Horror</option>
+                                        <option value="Sci">Sci-Fi</option>
+                                        <option value="Thriller">Thriller</option>
+                                        <option value="Documentary">Documentary</option>
+                                    </select>
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label">
+                                        Release Date
+                                    </label>
+                                    <input type="date" name="date" id="releaseDate" class="form-control">
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label">
+                                        <i class="fas fa-image"></i> Upload Movie Poster
+                                    </label>
+                                    <div class="file-input-wrapper">
+                                        <label for="fileInput" class="file-input-label">
+                                            <i class="fas fa-cloud-upload-alt"></i>
+                                            <span id="fileText">Click to browse or drag and drop</span>
+                                        </label>
+                                        <input type="file" name="photo" id="fileInput" class="form-control"
+                                            accept="image/*">
+                                    </div>
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label">
+                                        <i class="fas fa-align-left"></i> Description
+                                    </label>
+                                    <textarea name="description" id="descriptionTextarea" class="form-control" rows="4"
+                                        placeholder="Write a brief description of the movie..."></textarea>
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label">
+                                        <i class="fas fa-star"></i> Rating (1-10)
+                                    </label>
+                                    <input type="number" name="rating" id="ratingInput"
+                                        class="form-control rating-input" min="1" max="10" step="0.1" placeholder="8.5">
+                                </div>
+                                <div class="d-flex justify-content-center mt-3">
+                                    <button type="submit" class="btn btn-submit">
+                                        <i class="fas fa-check-circle me-2"></i> Submit Movie
+                                    </button>
+                                </div>
+                            </form>
 
-                        </form>
-                    </div>
-
-                </main>
+                        </div>
+                    </main>
             </div>
     </div>
 
     <%- include("partials/end.ejs") %>
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.22/dist/sweetalert2.min.js"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const form = document.getElementById('movieForm');
+
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const name = document.getElementById('movieName').value.trim();
+                    const genre = document.getElementById('genreSelect').value.trim();
+                    const date = document.getElementById('releaseDate').value.trim();
+                    const rating = document.getElementById('ratingInput').value.trim();
+                    const photo = document.querySelector('input[name="photo"]').files.length;
+                    const description = document.getElementById('descriptionTextarea').value.trim();
+
+                    if (!name) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Movie Name Missing',
+                            text: 'Please enter the movie name',
+                            confirmButtonColor: '#3085d6'
+                        });
+                        return;
+                    }
+
+                    if (!genre) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Genre Missing',
+                            text: 'Please select a genre',
+                            confirmButtonColor: '#3085d6'
+                        });
+                        return;
+                    }
+
+                    if (!date) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Release Date Missing',
+                            text: 'Please select a release date',
+                            confirmButtonColor: '#3085d6'
+                        });
+                        return;
+                    }
+
+                    if (!photo) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Poster Missing',
+                            text: 'Please upload a movie poster',
+                            confirmButtonColor: '#3085d6'
+                        });
+                        return;
+                    }
+
+                    if (!description) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Description Missing',
+                            text: 'Please enter a description',
+                            confirmButtonColor: '#3085d6'
+                        });
+                        return;
+                    }
+
+                    if (!rating) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Rating Missing',
+                            text: 'Please select a rating',
+                            confirmButtonColor: '#3085d6'
+                        });
+                        return;
+                    }
+                    form.submit();
+                });
+            });
+        </script>

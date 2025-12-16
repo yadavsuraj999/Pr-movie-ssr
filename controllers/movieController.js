@@ -52,7 +52,7 @@ const deleteMovie = async (req, res) => {
             }
         })
         await Movies.findByIdAndDelete(movieId);
-        return res.redirect("/")
+        return res.redirect("/view-movie")
     } catch (error) {
         console.log(error);
         return res.status(500).send("An error occurred while deleting the movie");
@@ -105,10 +105,15 @@ const frontEnd = async (req, res) => {
 }
 
 const frontEndView = async (req, res) => {
-    const movies = await Movies.find();
-    console.log(movies);
-    return res.render("frontEndView", {movies})
-}
+    const movieId = req.params.id;
+    try {
+        const movie = await Movies.findById(movieId);
+        return res.render("frontEndView", { movie });
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 
 
 
